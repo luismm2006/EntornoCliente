@@ -1,5 +1,0 @@
-[
-    { "nombre": "Laptop", "cantidad": 5, "precio": 1200 },
-    { "nombre": "Mouse", "cantidad": 25, "precio": 20 },
-    { "nombre": "Keyboard", "cantidad": 15, "precio": 50 }
-]
