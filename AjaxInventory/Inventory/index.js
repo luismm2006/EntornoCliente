@@ -114,15 +114,16 @@ function updateItem({nombre, cantidad, precio}){
   })
   .then(response => {
     if (response.ok) {
+      const actualizado = JSON.parse(request.responseText);
+      const index = inventario.findIndex(it => it.id === item.id);
+      inventario[index] = actualizado;
+      renderTable();
     } else {
       return Promise.reject(response);
     }
   })
-  .then(inventary => {
-    const actualizado = JSON.parse(request.responseText);
-    const index = inventario.findIndex(it => it.id === item.id);
-    inventario[index] = actualizado;
-    renderTable();
+  .then(data => {
+    console.log("Elemento con id=" + idAActualizar + " actualizado:", data);
   })
   .catch(error => console.error("Error al actualizar el elemento:", error));
 
